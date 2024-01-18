@@ -4,7 +4,7 @@ local keymap = vim.keymap
 
 -- nvim-spectre
 vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-	desc = "Search Replace current",
+	desc = "Search current file",
 })
 
 -- To use ctrl+backspace and c-v
@@ -27,8 +27,6 @@ keymap.set("x", "p", '"_dP')
 keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("i", "<C-a>", "<Esc>gg<S-v>G")
 
-keymap.del("n", "<leader>gg")
-keymap.del("n", "<leader>gG")
 keymap.del("n", "<leader>L")
 keymap.del("n", "<leader>bb") -- switch buffer
 keymap.del("n", "<leader>ft") -- terminal

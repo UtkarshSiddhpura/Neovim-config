@@ -16,7 +16,11 @@ return {
 		{ "<leader>sT", false },
 		{ "<leader>sw", false },
 		{ "<leader>sW", false },
-    --remaps
+		{ "<leader>gs", false },
+		{ "<leader>gc", false },
+		{ "<leader>gh", false },
+		--Mappings
+		-- Search in git repo if not -> Root
 		{ "<leader>ff", "<leader><space>", desc = "Find Files (Git/Root)", remap = true },
 		{ "<leader>fs", "<leader>sG", desc = "Grep (cwd)", remap = true },
 		{ "<leader>fS", "<leader>sg", desc = "Grep (root)", remap = true },
