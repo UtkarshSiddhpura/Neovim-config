@@ -9,4 +9,7 @@ opt.clipboard = "" -- Don't Sync with sys clipboard
 opt.expandtab = false
 opt.tabstop = 4
 opt.shiftwidth = 4
-
+-- change default shell to bash (might cause lsp errors)
+-- opt.shell = "bash"
+-- opt.shellquote = "\\"
+-- opt.shellxquote = ""

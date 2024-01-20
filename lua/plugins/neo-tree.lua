@@ -23,6 +23,9 @@ return {
 		{ "<leader>ge", false },
 	},
 	opts = {
+		filesystem = {
+			use_libuv_file_watcher = false,
+		},
 		window = {
 			mappings = {
 				["#"] = "noop",
