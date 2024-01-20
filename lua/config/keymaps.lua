@@ -3,11 +3,11 @@
 local keymap = vim.keymap
 
 -- nvim-spectre
-vim.keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+keymap.set("n", "<leader>sp", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
 	desc = "Search current file",
 })
 
--- To use ctrl+backspace and c-v
+-- To use ctrl+backspace and copy
 vim.api.nvim_set_keymap("i", "<C-H>", "<C-W>", { noremap = true })
 keymap.set("t", "<C-H>", "<C-W>")
 keymap.set("v", "<C-C>", '"+y')

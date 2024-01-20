@@ -4,6 +4,12 @@ return {
 		{ "<leader>bd", false },
 		{ "<leader>bD", false },
 		-- Quick Buffer delete
-		{ "<leader>d", "<cmd>:bdelete<cr><cr>", desc = "Delete Buffer" },
+		{
+			"<leader>d",
+			function(n)
+				require("mini.bufremove").delete(n, false)
+			end,
+			desc = "Delete Buffer",
+		},
 	},
 }

@@ -1,3 +1,4 @@
+local Util = require("lazyvim.util")
 local function getNode(state)
 	-- get the current node
 	local node = state.tree:get_node()
@@ -21,31 +22,51 @@ return {
 	keys = {
 		{ "<leader>be", false },
 		{ "<leader>ge", false },
+		{ "<leader>fe", false },
+		{
+			"<leader>t",
+			function()
+				require("neo-tree.command").execute({ dir = Util.root() })
+			end,
+			desc = "Explorer Toggle",
+		},
+		{
+			"<leader>e",
+			function()
+				require("neo-tree.command").execute({})
+			end,
+			desc = "Explorer Current File",
+		},
 	},
 	opts = {
 		filesystem = {
-			use_libuv_file_watcher = false,
+			use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+			follow_current_file = {
+				enabled = true, -- This will find and focus the file in the active buffer every time
+			},
 		},
 		window = {
+			width = 25,
 			mappings = {
 				["#"] = "noop",
 				[">"] = "noop",
 				["[g"] = "noop",
 				["]g"] = "noop",
-				["e"] = "noop",
 				["w"] = "noop",
 				["od"] = "noop",
 				["os"] = "noop",
 				["D"] = "noop",
 				["/"] = "noop",
 				-- Mappings
+				["<leader>e"] = function()
+					vim.cmd("wincmd l")
+				end,
+				["<leader>t"] = function()
+					vim.cmd("wincmd l")
+				end,
 				["<c-x>"] = "cut_to_clipboard",
 				["x"] = "close_node",
 				["<"] = "navigate_up",
-				["<cr>"] = function(state)
-					state.commands["open"](state)
-					state.commands["close_window"](state)
-				end,
 				-- Search under current cursor folder directory (from neo-tree recipes)
 				["F"] = function(state)
 					-- if we somehow didn't find a directory, just use the root node
