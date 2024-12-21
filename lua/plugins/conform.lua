@@ -1,4 +1,4 @@
-local formatter = { "eslint" }
+local formatter = { "prettier" }
 
 return {
 	"stevearc/conform.nvim",
@@ -21,6 +21,7 @@ return {
 			["graphql"] = formatter,
 			["handlebars"] = formatter,
 			proto = { "buf" },
+			["python"] = { "black" },
 		},
 	},
 }

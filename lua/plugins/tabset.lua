@@ -15,6 +15,13 @@ return {
 						expandtab = true,
 					},
 				},
+				{
+					filetypes = { "python" },
+					config = {
+						tabwidth = 4,
+						expandtab = true,
+					},
+				},
 				-- {
 				-- 	filetypes = {
 				-- 		"javascript",
@@ -26,7 +33,8 @@ return {
 				-- 		"html",
 				-- 	},
 				-- 	config = {
-				-- 		tabwidth = 2,
+				-- 		tabwidth = 4,
+				-- 		expandtab = false,
 				-- 	},
 				-- },
 			},
